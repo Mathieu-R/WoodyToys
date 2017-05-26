@@ -9,7 +9,7 @@ $ORIGIN wt4.ephec-ti.be.
 $TTL 300
 
 @       IN      SOA    ns1.wt4.ephec-ti.be. admin.wt4.ephec-ti.be. (
-                                            2017050702 ; Serial
+                                            2017050703 ; Serial
                                             14400      ; Refresh (après 4h)
                                             3600       ; Retry (après 1 heure)
                                             1209600    ; Expire (après 1 semaine)
@@ -30,7 +30,6 @@ www                         IN          CNAME  wt4.ephec-ti.be.
 imap                        IN          CNAME  wt4.ephec-ti.be.
 smtp                        IN          CNAME  wt4.ephec-ti.be.
 pop3                        IN          CNAME  wt4.ephec-ti.be.
-; sip                         IN          CNAME  wt4.ephec-ti.be.
 
 ; MX
 wt4.ephec-ti.be.            IN          MX      10      mail.wt4.ephec-ti.be.
