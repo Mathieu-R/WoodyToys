@@ -1,12 +1,14 @@
 <?php
-$host = db;
+$host = 'db';
 $port = 5432;
 $db = 'woodymarket';
 $username = 'woodytoys';
 $password = 'superwoody';
 $dbstatus = NULL;
 
-if (isset($_GET['rq']) && $_GET['rq'] === 'products') {
+echo $_GET['rq'];
+
+if ($_GET['rq'] === 'products') {
 
   try {
     $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
