@@ -16,11 +16,11 @@
 		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
 		if ($pdo) {
 			$dbstatus =
-				"<p>Connecté avec succès à la base de données<strong>postgresql</strong>.<br />
+				"<p>Connecté avec succès à la base de données <strong>postgresql</strong>.<br />
 				Powered with Docker.</p>";
 		} else {
 			$dbstatus =
-				"<p>Non Connecté à la base de données<strong>postgresql</strong>.<br />
+				"<p>Non Connecté à la base de données <strong>postgresql</strong>.<br />
 				Problème de configuration ?</p>";
 		}
 		$pdo = null;
