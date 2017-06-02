@@ -4,30 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<?php
-	$host = db;
-	$port = 5432;
-	$db = 'woodymarket';
-	$username = 'woodytoys';
-	$password = 'superwoody';
-	$dbstatus = NULL;
-
-	try {
-		$pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
-		if ($pdo) {
-			$dbstatus =
-				"<p>Connecté avec succès à la base de données <strong>postgresql</strong>.<br />
-				Powered with Docker.</p>";
-		} else {
-			$dbstatus =
-				"<p>Non Connecté à la base de données <strong>postgresql</strong>.<br />
-				Problème de configuration ?</p>";
-		}
-		$pdo = null;
-	} catch (PDOException $e) {
-		echo $e->getMessage();
-	}
-?>
+<?php include './requests.php' ?php>
 <html>
 	<head>
 		<title>WoodyToys - Marketplace</title>
@@ -36,6 +13,15 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<script>
+		function fetchProducts() {
+			fetch('/requests.php?rq=products')
+				.then(response => response.json())
+				.then(products => console.table(products))
+				.catch(error => console.warn(error));
+		}
+		window.addEventListener('load', fetchProducts);
+	</script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
