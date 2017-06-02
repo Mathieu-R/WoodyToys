@@ -6,21 +6,20 @@ $username = 'woodytoys';
 $password = 'superwoody';
 $dbstatus = NULL;
 
-echo $_GET['rq'];
-
 if ($_GET['rq'] === 'products') {
 
   try {
     $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
-    /*if ($pdo) {
+    if ($pdo) {
       $dbstatus =
         "<p>Connecté avec succès à la base de données <strong>postgresql</strong>.<br />
         Powered with Docker.</p>";
+      echo $dbstatus;
     } else {
       $dbstatus =
         "<p>Non Connecté à la base de données <strong>postgresql</strong>.<br />
         Problème de configuration ?</p>";
-    }*/
+    }
 
     $results = $pdo->query('select nom, prix from produits');
     $pdo = null;
