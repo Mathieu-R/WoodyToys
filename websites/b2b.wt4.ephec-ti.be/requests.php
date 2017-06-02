@@ -14,7 +14,7 @@ if ($_GET['rq'] === 'products') {
       $dbstatus =
         "<p>Connecté avec succès à la base de données <strong>postgresql</strong>.<br />
         Powered with Docker.</p>";
-      echo $dbstatus;
+      //echo $dbstatus;
     } else {
       $dbstatus =
         "<p>Non Connecté à la base de données <strong>postgresql</strong>.<br />
