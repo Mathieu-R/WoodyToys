@@ -21,7 +21,7 @@ if ($_GET['rq'] === 'products') {
         Problème de configuration ?</p>";
     }
 
-    $results = $pdo->query('select nom, prix from produits');
+    $results = $pdo->query('select nom, prix from produits')->fetchAll();
     $pdo = null;
     echo json_encode($results);
   } catch (PDOException $e) {
