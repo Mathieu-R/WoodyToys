@@ -10,6 +10,8 @@ if ($_GET['rq'] === 'products') {
 
   try {
     $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
+    $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    
     if ($pdo) {
       $dbstatus =
         "<p>Connecté avec succès à la base de données <strong>postgresql</strong>.<br />
