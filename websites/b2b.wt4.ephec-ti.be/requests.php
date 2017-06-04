@@ -23,7 +23,7 @@ if ($_GET['rq'] === 'products') {
 
     $results = $pdo->query('select nom, prix from produits');
     $pdo = null;
-    echo $results;
+    echo json_encode($results);
   } catch (PDOException $e) {
     echo $e->getMessage();
   }
