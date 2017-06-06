@@ -12,6 +12,9 @@ if ($_GET['rq'] === 'products') {
     $pdo = new PDO("pgsql:host=$host;port=$port;dbname=$db;user=$username;password=$password");
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+    //$pdo->prepare('INSERT INTO produits(nom, prix) VALUES ('train', 10)');
+    //$pdo->e
+
     if ($pdo) {
       $dbstatus =
         "<p>Connecté avec succès à la base de données <strong>postgresql</strong>.<br />
